@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int loop_judge(char *input_jud);
-void say_hello(char *Hello_char);
+int say_hello(char *Hello_char);
 void cat_bird(char *chunchun);
 
 int main(int argc,char *argv[]){
@@ -18,8 +18,6 @@ int main(int argc,char *argv[]){
 
     //printf(":)\n");
 
-    say_hello(input_x);
-
     cat_bird(input_x);
 
     exit_loop = loop_judge(input_x);
@@ -28,7 +26,7 @@ int main(int argc,char *argv[]){
     fflush(stdin);
   }
 
-  printf("Bye bye :)");
+  printf("Bye bye :)\n");
   return 0;
 }
 
@@ -41,18 +39,22 @@ return 1;
     return 0;
 }
 
-void say_hello(char *input_x){
+int say_hello(char *input_x){
   //参照渡しによるポインタエラー　要インプット改良
     if(strcmp(input_x,"hello") ==0){
-      printf("Hello! You are polite!");
+      printf("Hello! You are polite!\n");
+      return 1;
     }
 
-    return;
+    return 0;
 }
 
   void cat_bird(char *input_x){
 
-    printf("%s\n",input_x);
+    if(say_hello(input_x) != 1){
+          printf("%s\n",input_x);
+    }
+
 
     return;
 }
