@@ -1,4 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
 
 int loop_judge(char *input_jud);
 int say_hello(char *Hello_char);
@@ -7,8 +10,7 @@ void cat_bird(char *chunchun);
 int main(int argc,char *argv[]){
 
   char *input_x;
-  int exit_loop = 0; 
-
+  int exit_loop = 0;
   while(exit_loop == 0){
 
     input_x = (char *)malloc(200* sizeof(char));
